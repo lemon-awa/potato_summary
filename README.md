@@ -3,7 +3,7 @@
 pip install potato-annotation
 ```
 ```bash
-ython potato/flask_server.py start multi_aspect_summary/configs/summary.yaml -p 8000 
+python potato/flask_server.py start multi_aspect_summary/configs/summary.yaml -p 8000 
 ```
 
 # 🥔Potato: the POrtable Text Annotation TOol
