@@ -61,6 +61,15 @@
     "alert_time_each_instance": 10000000,
     "horizontal_key_bindings": true,
 
+    "automatic_assignment": {
+        "on": True, #whether do automatic task assignment for annotators, default False.
+        "output_filename": 'task_assignment.json', #no need to change
+        "sampling_strategy": 'random', #currently we support random assignment or ordered assignment. Use 'random' for random assignment and 'ordered' for ordered assignment
+        "labels_per_instance": 2,  #the number of labels for each instance
+        "instance_per_annotator": 5, #the total amount of instances to be assigned to each annotator
+        "test_question_per_annotator": 0, # the number of attention test question to be inserted into the annotation queue. you must set up the test question in surveyflow to use this function
+    },
+
     "annotation_schemes": [
         {
             "annotation_type": "text",
@@ -69,7 +78,7 @@
 
             # adding requirements for labels, when "required" is True, the annotators will be asked to finish the current instance to proceed
             "label_requirement": {"required":True},
-            "labels": ['Context','Key idea','Method','Outcome', 'Project Impact'],
+            "labels": ['Context','Key idea', 'Validation','Outcome', 'Future Impact'],
 
             # if you want to use multi-line textbox, turn on the text area and set the desired rows and cols of the textbox
             "textarea": {
